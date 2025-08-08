@@ -18,11 +18,15 @@ app.get('/', (req, res) => {
     res.send('🚀 Backend agenda opérationnel');
 });
 
-// Lancement du serveur
-const PORT = process.env.PORT || 5000;
+if (!process.env.PORT) {
+  throw new Error("❌ PORT n'est pas défini dans les variables d'environnement.");
+}
+
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
-    console.log(`✅ Serveur démarré sur http://localhost:${PORT}`);
+  console.log(`✅ Serveur démarré sur http://localhost:${PORT}`);
 });
+
 
 app.get('/test-db', async (req, res) => {
     try {
