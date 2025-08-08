@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config(); // Charge les variables du fichier .env
+console.log("📦 DATABASE_URL:", process.env.DATABASE_URL);
 const db = require('./db');
 
 
