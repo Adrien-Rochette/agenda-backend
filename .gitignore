@@ -1,0 +1,3 @@
+# Ne pas pousser les modules ni les fichiers sensibles
+node_modules/
+.env
